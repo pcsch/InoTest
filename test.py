@@ -1,10 +1,11 @@
 import Lisa
 import unittest
 from numpy.testing import assert_array_equal, assert_allclose
+import os
 
-fname_reference = __file__+"/test.h5"
+fname_reference = os.path.join(os.path.dirname(__file__), "test.h5")
 
-fname_test = __file__+"/../test.h5"
+fname_test = os.path.join(os.path.dirname(__file__), "..", "test.h5")
 
 
 class FileTest(unittest.TestCase):

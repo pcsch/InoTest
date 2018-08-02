@@ -12,6 +12,8 @@ if "INOTEST_TEST" in os.environ:
 else:
     fname_test = os.path.join(os.path.dirname(__file__), "..", "test.h5")
 
+print("Testing {}(test) against {}(reference)".format(fname_test, fname_reference))
+
 
 class FileTest(unittest.TestCase):
     def setUp(self):

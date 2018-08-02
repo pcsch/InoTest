@@ -3,9 +3,14 @@ import unittest
 from numpy.testing import assert_array_equal, assert_allclose
 import os
 
-fname_reference = os.path.join(os.path.dirname(__file__), "test.h5")
-
-fname_test = os.path.join(os.path.dirname(__file__), "..", "test.h5")
+if "INOTEST_REFERENCE" in os.environ:
+    fname_reference = os.environ.get("INOTEST_REFERENCE")
+else:
+    fname_reference = os.path.join(os.path.dirname(__file__), "test.h5")
+if "INOTEST_TEST" in os.environ:
+    fname_test = os.environ.get("INOTEST_TEST")
+else:
+    fname_test = os.path.join(os.path.dirname(__file__), "..", "test.h5")
 
 
 class FileTest(unittest.TestCase):
